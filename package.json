@@ -1,0 +1,34 @@
+{
+  "name": "gulp-boilerplate",
+  "version": "0.0.1",
+  "description": "Gulp Boilreplate",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonShulzhenko/gulp-boilerplate.git"
+  },
+  "author": "Anton Shulzhenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntonShulzhenko/gulp-boilerplate/issues"
+  },
+  "homepage": "https://github.com/AntonShulzhenko/gulp-boilerplate#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "require-dir": "^0.3.2"
+  },
+  "config": {
+    "styles": {
+      "src": {
+        "sass": "src/sass"
+      },
+      "build": {
+        "css": "build/css"
+      }
+    }
+  }
+}
