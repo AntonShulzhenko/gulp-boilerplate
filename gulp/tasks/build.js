@@ -9,7 +9,7 @@ function build(cb) {
     // 'svgo',
     'sass',
     'pug',
-    // 'webpack',
+    'webpack',
     'copy',
     // 'list-pages',
     cb

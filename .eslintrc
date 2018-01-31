@@ -1,27 +1,15 @@
 {
-  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
-    "es6": true,
     "node": true
   },
-  "globals": {
-    "main": true,
-    "jQuery": true,
-    "Handlebars": true,
-    "$": true
-  },
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module"
-  },
   "rules": {
-    "no-console": 0,
-    "no-undef": 0,
-    "no-unused-vars": 0,
+    "no-undef": 1,
+    "no-unused-vars": 1,
     "eqeqeq": [2, "smart"],
     "no-floating-decimal": 2,
-    "no-multi-spaces": [0, {
+    "no-multi-spaces": [2, {
       "exceptions": {
         "ImportDeclaration": true,
         "VariableDeclarator": true
@@ -35,7 +23,7 @@
       "VariableDeclarator": 1
     }],
     "quotes": [2, "single", "avoid-escape"],
-    "semi": 2,
+    "semi": [2, "always"],
     "space-before-blocks": 2,
     "space-before-function-paren": [2, "never"],
     "constructor-super": 2,
