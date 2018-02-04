@@ -1,13 +1,13 @@
-var gulp         = require('gulp');
-var sass         = require('gulp-sass');
-var sourcemaps   = require('gulp-sourcemaps');
-var postcss      = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var mqpacker     = require('css-mqpacker');
-var csso         = require('postcss-csso');
-var config       = require('../config');
+const gulp         = require('gulp');
+const sass         = require('gulp-sass');
+const sourcemaps   = require('gulp-sourcemaps');
+const postcss      = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const mqpacker     = require('css-mqpacker');
+const config       = require('../config');
+const csso         = require('postcss-csso');
 
-var processors = [
+let processors = [
   autoprefixer({
     browsers: ['last 4 versions'],
     cascade: false
@@ -16,12 +16,12 @@ var processors = [
   mqpacker({
     sort: sortMediaQueries
   }),
-  // csso // - uncomment to minify styles
+  // csso
 ];
 
-gulp.task('sass', function() {
+gulp.task('sass', () => {
   return gulp
-    .src(config.src.sass + '/*.{sass,scss}')
+    .src(config.src.sass + '/**/*.{sass,scss}')
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: config.production ? 'compact' : 'expanded', // nested, expanded, compact, compressed
@@ -33,7 +33,7 @@ gulp.task('sass', function() {
     .pipe(gulp.dest(config.dest.css));
 });
 
-gulp.task('sass:watch', function() {
+gulp.task('sass:watch', () => {
   gulp.watch(config.src.sass + '/**/*.{sass,scss}', ['sass']);
 });
 
@@ -46,8 +46,8 @@ function isMin(mq) {
 }
 
 function sortMediaQueries(a, b) {
-  A = a.replace(/\D/g, '');
-  B = b.replace(/\D/g, '');
+  let A = a.replace(/\D/g, '');
+  let B = b.replace(/\D/g, '');
 
   if (isMax(a) && isMax(b)) {
     return B - A;

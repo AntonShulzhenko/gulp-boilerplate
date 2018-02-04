@@ -1,12 +1,12 @@
-var gulp   = require('gulp');
-var server = require('browser-sync').create();
-var util   = require('gulp-util');
-var config = require('../config');
+const gulp   = require('gulp');
+const server = require('browser-sync').create();
+const util   = require('gulp-util');
+const config = require('../config');
 
 // in CL 'gulp server --open' to open current project in browser
 // in CL 'gulp server --tunnel siteName' to make project available over http://siteName.localtunnel.me
 
-gulp.task('server', function() {
+gulp.task('server', () => {
   server.init({
     server: {
       baseDir: !config.production ? [config.dest.root, config.src.root] : config.dest.root,

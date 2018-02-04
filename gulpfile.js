@@ -1,2 +1,2 @@
-let requireDir = require('require-dir');
-let dir        = requireDir('./gulp/tasks', {recursive: true});
+// Require all tasks in gulp/tasks, including subfolders
+require('require-dir')('./gulp/tasks', {recurse: true});

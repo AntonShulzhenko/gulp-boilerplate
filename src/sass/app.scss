@@ -1,3 +1,25 @@
-body {
-  background-color: deepskyblue;
-}
+//Init styles
+//===========================
+// Bootstrap Partials
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+//===========================
+
+// Redefine variables
+@import 'helpers/variables';
+
+// Add Bootstrap Grid
+@import '../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+
+// Spacing classes
+@import '../../node_modules/bootstrap/scss/utilities/spacing.scss';
+@import '../../node_modules/bootstrap/scss/utilities/display.scss';
+//===========================
+
+
+@import 'helpers/all';
+@import 'common/common';
+@import 'common/layouts';
+@import 'common/main';
+

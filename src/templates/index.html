@@ -1,0 +1,24 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+{% import "data/data.html" as tests %}
+
+{% block content %}
+
+	{# variable example #}
+	<h1>{{title}}</h1>
+  <a href="modules/module-1.html">Test Module</a>
+
+
+	{# partial example #}
+	{% include "partials/_header.html" %}
+
+	{# data usage example #}
+
+		{% for test in tests.list %}
+		<li>{{test.title}}</li>
+		{% endfor %}
+	{# end of example #}
+
+{% endblock %}

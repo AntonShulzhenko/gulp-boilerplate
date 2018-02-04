@@ -1,0 +1,17 @@
+---
+title: New Module
+---
+{% extends "./layouts/_layout.html" %}
+{% block stylesLink %}
+<link rel="stylesheet" media="all" href="/css/module-1.css">
+{% endblock %}
+
+{% block content %}
+
+{# variable example #}
+<div class="container">
+  <h1>{{title}}</h1>
+</div>
+
+
+{% endblock %}

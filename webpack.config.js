@@ -17,7 +17,7 @@ function createConfig(env) {
   webpackConfig = {
     context: path.join(__dirname, config.src.js),
     entry: {
-      vendor: './vendor.js',
+      // vendor: './vendor.js',
       app: './app.js',
     },
     output: {
@@ -41,11 +41,6 @@ function createConfig(env) {
           }
         }
       }),
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-      }),
       new webpack.NoEmitOnErrorsPlugin(),
 
       new BundleAnalyzerPlugin({
@@ -63,7 +58,6 @@ function createConfig(env) {
         TimelineMax: path.resolve('node_modules', 'gsap/src/uncompressed/TimelineMax.js'),
         ScrollMagic: path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js'),
         'animation.gsap': path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
-        'debug.addIndicators': path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
       },
     },
     module: {

@@ -1,19 +1,13 @@
-var gulp   = require('gulp');
-var config = require('../config.js');
+const gulp   = require('gulp');
+const config = require('../config.js');
 
-gulp.task('copy:fonts', function() {
+gulp.task('copy:fonts', () => {
   return gulp
     .src(config.src.fonts + '/*.{ttf,eot,woff,woff2}')
     .pipe(gulp.dest(config.dest.fonts));
 });
 
-gulp.task('copy:lib', function() {
-  return gulp
-    .src(config.src.lib + '/**/*.*')
-    .pipe(gulp.dest(config.dest.lib));
-});
-
-gulp.task('copy:img', function() {
+gulp.task('copy:img', () => {
   return gulp
     .src([
       config.src.img + '/**/*.{jpg,png,jpeg,svg,gif}',
@@ -24,9 +18,8 @@ gulp.task('copy:img', function() {
 
 gulp.task('copy', [
   'copy:img',
-  'copy:lib',
   'copy:fonts'
 ]);
-gulp.task('copy:watch', function() {
+gulp.task('copy:watch', () => {
   gulp.watch(config.src.img+'/*', ['copy']);
 });
