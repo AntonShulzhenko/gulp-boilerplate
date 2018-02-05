@@ -3,7 +3,6 @@
 \*------------------------------------*/
 
 .main {
-  background-color: $gray-500;
-  
   @include make-spacer(py, 4);
+  background-color: $gray-500;
 }

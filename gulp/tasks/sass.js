@@ -6,6 +6,7 @@ const autoprefixer = require('autoprefixer');
 const mqpacker     = require('css-mqpacker');
 const config       = require('../config');
 const csso         = require('postcss-csso');
+const scsslint     = require('gulp-scss-lint');
 
 let processors = [
   autoprefixer({
@@ -22,6 +23,9 @@ let processors = [
 gulp.task('sass', () => {
   return gulp
     .src(config.src.sass + '/**/*.{sass,scss}')
+    .pipe(scsslint({
+      'config': './.sass-lint.yml'
+    }))
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: config.production ? 'compact' : 'expanded', // nested, expanded, compact, compressed

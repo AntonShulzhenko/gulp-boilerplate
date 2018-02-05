@@ -3,8 +3,7 @@
 \*------------------------------------*/
 
 .footer {
-  background-color: palegreen;
-  
   @include make-spacer(py, 1);
   @include make-spacer(px, 2);
+  background-color: $green;
 }

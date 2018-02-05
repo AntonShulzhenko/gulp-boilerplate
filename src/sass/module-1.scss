@@ -1,6 +1,8 @@
+@import "init";
+
 /*------------------------------------*\
   #MODULE-1
 \*------------------------------------*/
 
-@import 'modules/module-1/component-1';
-@import 'modules/module-1/component-2';
+@import "modules/module-1/component-1";
+@import "modules/module-1/component-2";
