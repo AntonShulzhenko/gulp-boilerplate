@@ -1,0 +1,10 @@
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+
+.header {
+  background-color: deepskyblue;
+  
+  @include make-spacer(py, 2);
+  @include make-spacer(px, 2);
+}

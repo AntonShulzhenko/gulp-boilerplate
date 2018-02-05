@@ -1,0 +1,57 @@
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:      12;
+$grid-gutter-width: 16px;
+
+$grid-gutter-widths: (
+  xs: $grid-gutter-width,
+  sm: $grid-gutter-width,
+  tp: $grid-gutter-width,
+  tl: $grid-gutter-width,
+  md: $grid-gutter-width,
+  xm: $grid-gutter-width,
+  lg: $grid-gutter-width,
+  xl: $grid-gutter-width,
+);
+
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 592px,
+  tp: 768px,
+  tl: 1024px,
+  md: 1280px,
+  xm: 1360px,
+  lg: 1680px,
+  xl: 1800px,
+);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+//
+// 1920 - 1800 -> 1680
+// 1799 - 1680 -> 1560
+// 1679 - 1360 -> 1320
+// 1359 - 1280 -> 1200
+// 1279 - 1024 -> 960
+// 1023 - 768  -> 720
+// 767  - 592  -> 552
+// 591  - 320  -> 100%
+
+$container-max-widths: (
+  sm: 536px,
+  tp: 704px,
+  tl: 960px,
+  md: 1200px,
+  xm: 1280px,
+  lg: 1520px,
+  xl: 1720px,
+);

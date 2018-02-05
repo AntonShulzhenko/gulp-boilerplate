@@ -5,20 +5,46 @@ title: Index page
 {% import "data/data.html" as tests %}
 
 {% block content %}
+  {# partial example #}
+  {% include "partials/_header.html" %}
 
-	{# variable example #}
-	<h1>{{title}}</h1>
-  <a href="modules/module-1.html">Test Module</a>
+  <main class="main">
 
+    <p>Main</p>
 
-	{# partial example #}
-	{% include "partials/_header.html" %}
+    <section class="section">
 
-	{# data usage example #}
+      <p>Section</p>
 
-		{% for test in tests.list %}
-		<li>{{test.title}}</li>
-		{% endfor %}
-	{# end of example #}
+      <div class="container">
+
+        {# variable example #}
+        <h1 class="mb-4">{{title}}</h1>
+
+        <ul class="mb-3">
+
+          <li>
+            <a href="modules/module-1.html">Test Module</a>
+          </li>
+
+        </ul>
+
+        {# data usage example #}
+        <ul>
+
+          {% for test in tests.list %}
+          <li>{{test.title}}</li>
+          {% endfor %}
+
+        </ul>
+        {# end of example #}
+
+      </div>
+
+    </section>
+
+  </main>
+
+  {% include "partials/_footer.html" %}
 
 {% endblock %}
