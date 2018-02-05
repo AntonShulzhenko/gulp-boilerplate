@@ -35,7 +35,7 @@ linters:
 
   Comment:
     enabled: true
-    style: allowed
+    style: silent
 
   DebugStatement:
     enabled: true

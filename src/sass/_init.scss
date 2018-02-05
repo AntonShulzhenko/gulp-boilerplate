@@ -1,6 +1,4 @@
-/**
- * Bootstrap functions, mixins, default variables
- */
+// Bootstrap functions, mixins, default variables
 
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
@@ -8,16 +6,12 @@
 
 
 
-/**
- * Custom variables
- */
+// Custom variables
 
 @import "settings/variables";
 
 
 
-/**
- * Tools
- */
+// Tools
 
 @import "tools/tools";
