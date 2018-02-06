@@ -157,8 +157,8 @@ For comment declaration uses inline comment syntax
 * `One (1)` empty line between closely related rulesets.
 * `Two (2)` empty lines between loosely related rulesets.
 * `Four (4)` empty lines between entirely new sections.
-
-
+    
+    
     //------------------------------------//
     //  #FOO
     //------------------------------------//
@@ -169,7 +169,6 @@ For comment declaration uses inline comment syntax
         
         
         &--baz {}
-    
     }
     
     
@@ -182,12 +181,10 @@ For comment declaration uses inline comment syntax
     .bar {
     
         &__bar {}
-    
-    
+            
+            
         &--baz {}
-    
     }
-        
 
 
 ### Naming
