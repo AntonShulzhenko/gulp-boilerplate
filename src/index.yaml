@@ -1,0 +1,7 @@
+ProjectTitle: app
+
+PageList:
+- file: page.html
+  ready: 50
+- file: modules/module-1.html
+  ready: 50

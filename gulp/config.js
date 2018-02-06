@@ -11,6 +11,7 @@ const config = {
     root         : 'src',
     templates    : 'src/templates',
     templatesData: 'src/templates/data',
+    pagelist     : 'src/index.yaml',
     sass         : 'src/sass',
     // path for sass files that will be generated automatically via some of tasks
     js           : 'src/js',

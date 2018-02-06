@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title><%= pages.ProjectTitle %></title>
+  <style>
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big,
+    cite, code,del, dfn, em, img, ins, kbd, q, s, samp, small,
+    strike, strong, sub, sup, tt, var,b, u, i, center, dl, dt,
+    dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+    tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+    embed, figure, figcaption, footer, header, hgroup, menu, nav,
+    output, ruby, section, summary, time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      vertical-align: baseline;
+    }
+    img, fieldset, a img {
+      border: 0;
+    }
+    input, button {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    div, input, textarea, select, button, span
+    h1, h2, h3, h4, h5, h6,
+    a,a:focus {
+      outline: none;
+    }
+    ul, ol {
+      list-style-type: none;
+    }
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+    html {
+      box-sizing: border-box;
+      font-family: sans-serif;
+      line-height: 1.2;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      -ms-overflow-style: scrollbar;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+      display: block;
+    }
+    body {
+      text-align: left;
+    }
+    hr {
+      box-sizing: content-box;
+      height: 0;
+      overflow: visible;
+    }
+    b,
+    strong {
+      font-weight: bolder;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h1>Page list</h1>
+  </header>
+
+  <section>
+    <ol class="pagelist">
+      <% i = 0;%>
+      <% _.each(pages.PageList, function(page) { i++; %>
+        <li <% if(!page.ready) { %> class="is-notready" <% } %>>
+
+          <a class="pagelist__title <% if(i==1){ %> is-active <% } %>" target="_blank" href="<%= page.file %>">
+            <span><%= i %>.</span>
+            <span><%= _.split(page.file, '.', 1) %></span>
+          </a>
+                
+          <div class="pagelist__progress">
+            <% if(!page.ready) page.ready = 0; %>
+            <i style="width:<%= page.ready %>%"></i>
+          </div>
+
+        </li>
+      <% }) %>
+    </ol>
+  </section>
+</body>
+</html>
