@@ -273,7 +273,7 @@ Separate independent but loosely related snippets of markup with a single empty 
     
 ### JavaScript Hooks
 
-To bind elements with Javascript use specific classes are prepended with `js-`
+To bind elements with JavaScript use specific classes are prepended with `js-`
 
     <input type="submit" class="btn js-btn" value="Follow">
     
