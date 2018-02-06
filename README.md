@@ -159,16 +159,17 @@ For comment declaration uses inline comment syntax
 * `Four (4)` empty lines between entirely new sections.
     
     
+    
     //------------------------------------//
     //  #FOO
     //------------------------------------//
     
     .foo {
     
-        &__bar {}
+      &__bar {}
         
         
-        &--baz {}
+      &--baz {}
     }
     
     
@@ -180,10 +181,10 @@ For comment declaration uses inline comment syntax
     
     .bar {
     
-        &__bar {}
+      &__bar {}
             
             
-        &--baz {}
+      &--baz {}
     }
 
 
