@@ -22,7 +22,7 @@ let processors = [
 
 gulp.task('sass', () => {
   return gulp
-    .src(config.src.sass + '/**/*.{sass,scss}')
+    .src(`${config.src.sass}/**/*.{sass,scss}`)
     .pipe(scsslint({
       'config': './.sass-lint.yml'
     }))
@@ -38,7 +38,7 @@ gulp.task('sass', () => {
 });
 
 gulp.task('sass:watch', () => {
-  gulp.watch(config.src.sass + '/**/*.{sass,scss}', ['sass']);
+  gulp.watch(`${config.src.sass}/**/*.{sass,scss}`, ['sass']);
 });
 
 function isMax(mq) {

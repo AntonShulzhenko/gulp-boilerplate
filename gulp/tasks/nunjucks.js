@@ -15,7 +15,10 @@ function renderHtml(onlyChanged) {
   });
 
   return gulp
-    .src([config.src.templates + '/**/[^_]*.html'])
+    .src([
+      `${config.src.templates}/**/[^_]*.html`,
+      `!${config.src.templatesData}/**/[^_]*.html`
+    ])
     .pipe(plumber({
       errorHandler: config.errorHandler
     }))
@@ -45,10 +48,10 @@ gulp.task('nunjucks:changed', () => {
 
 gulp.task('nunjucks:watch', () => {
   gulp.watch([
-    config.src.templates + '/**/*.html'
+    `${config.src.templates}/**/*.html`
   ], ['nunjucks:changed']);
 
   gulp.watch([
-    config.src.templates + '/**/*.html'
+    `${config.src.templates}/**/*.html`
   ], ['nunjucks']);
 });
