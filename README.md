@@ -164,12 +164,12 @@ For comment declaration uses inline comment syntax
     //------------------------------------//
     
     .foo {
-        
+    
         &__bar {}
         
         
         &--baz {}
-        
+    
     }
     
     
@@ -178,14 +178,14 @@ For comment declaration uses inline comment syntax
     //------------------------------------//
     //  #BAR
     //------------------------------------//
-        
+    
     .bar {
-            
+    
         &__bar {}
-            
-            
+    
+    
         &--baz {}
-            
+    
     }
         
 
