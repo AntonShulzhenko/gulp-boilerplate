@@ -8,16 +8,16 @@ title: Index page
   {# partial example #}
   {% include "partials/_header.html" %}
 
-  <main class="main">
 
+
+
+  <main class="main">
     <p>Main</p>
 
     <section class="section">
-
       <p>Section</p>
 
       <div class="container">
-
         {# variable example #}
         <h1 class="mb-4">{{title}}</h1>
 
@@ -25,17 +25,20 @@ title: Index page
         <ul>
 
           {% for test in tests.list %}
+
           <li>{{test.title}}</li>
+
           {% endfor %}
 
         </ul>
         {# end of example #}
 
       </div>
-
     </section>
-
   </main>
+
+
+
 
   {% include "partials/_footer.html" %}
 

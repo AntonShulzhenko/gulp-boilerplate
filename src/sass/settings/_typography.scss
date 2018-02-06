@@ -2,7 +2,7 @@
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font-family-sans-serif: R-Regular, "Helvetica", "Arial", sans-serif;
 $font-family-serif: "Roboto", "Helvetica", "Arial", sans-serif;
 $font-family-monospace:  "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base: $font-family-sans-serif;
@@ -24,7 +24,7 @@ $h4-font-size: 16px;
 $h5-font-size: 16px;
 $h6-font-size: 16px;
 
-$headings-font-family: "Raleway", "Roboto", "Helvetica", "Arial", sans-serif;
+$headings-font-family: R-Bold, "Roboto", "Helvetica", "Arial", sans-serif;
 $headings-font-weight: 700;
 $headings-line-height: 1.2;
 $headings-color: inherit;

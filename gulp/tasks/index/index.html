@@ -4,96 +4,70 @@
   <meta charset="UTF-8">
   <title><%= pages.ProjectTitle %></title>
   <style>
-    html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big,
-    cite, code,del, dfn, em, img, ins, kbd, q, s, samp, small,
-    strike, strong, sub, sup, tt, var,b, u, i, center, dl, dt,
-    dd, ol, ul, li, fieldset, form, label, legend, table, caption,
-    tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
-    embed, figure, figcaption, footer, header, hgroup, menu, nav,
-    output, ruby, section, summary, time, mark, audio, video {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      vertical-align: baseline;
-    }
-    img, fieldset, a img {
-      border: 0;
-    }
-    input, button {
-      margin: 0;
-      padding: 0;
-      border: 0;
-    }
-    div, input, textarea, select, button, span
-    h1, h2, h3, h4, h5, h6,
-    a,a:focus {
-      outline: none;
-    }
-    ul, ol {
-      list-style-type: none;
-    }
-    table {
-      border-spacing: 0;
-      border-collapse: collapse;
-      width: 100%;
-    }
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-    html {
-      box-sizing: border-box;
-      font-family: sans-serif;
-      line-height: 1.2;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-      -ms-overflow-style: scrollbar;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    }
-    article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
-      display: block;
-    }
+    *,::after,::before,html{box-sizing:border-box}a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;vertical-align:baseline}a img,fieldset,img{border:0}button,input{margin:0;padding:0;border:0}a,a:focus,button,div,h2,h3,h4,h5,h6,input,select,span h1,textarea{outline:0}ol,ul{list-style-type:none}table{border-spacing:0;border-collapse:collapse;width:100%}html{font-family:sans-serif;line-height:1.2;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:transparent}article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{text-align:left}hr{box-sizing:content-box;height:0;overflow:visible}b,strong{font-weight:bolder}
+
     body {
-      text-align: left;
+      background-color: #F0F0F0;
     }
-    hr {
-      box-sizing: content-box;
-      height: 0;
-      overflow: visible;
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 0 16px;
     }
-    b,
-    strong {
-      font-weight: bolder;
+
+    .header {
+      background-color: #DCDCDC;
+      padding: 16px;
+    }
+
+    .section {
+      padding: 40px 0;
+    }
+
+    .pagelist li {
+      margin-bottom: 16px;
     }
   </style>
 </head>
 
 <body>
   <header class="header">
-    <h1>Page list</h1>
+    <div class="container">
+      <h1>Page list</h1>
+    </div>
   </header>
 
-  <section>
-    <ol class="pagelist">
-      <% i = 0;%>
-      <% _.each(pages.PageList, function(page) { i++; %>
+
+
+
+  <section class="section">
+    <div class="container">
+      <ul class="pagelist">
+
+        <% i = 0;%>
+        <% _.each(pages.PageList, function(page) { i++; %>
         <li <% if(!page.ready) { %> class="is-notready" <% } %>>
 
           <a class="pagelist__title <% if(i==1){ %> is-active <% } %>" target="_blank" href="<%= page.file %>">
             <span><%= i %>.</span>
             <span><%= _.split(page.file, '.', 1) %></span>
           </a>
-                
+
           <div class="pagelist__progress">
             <% if(!page.ready) page.ready = 0; %>
             <i style="width:<%= page.ready %>%"></i>
           </div>
 
         </li>
-      <% }) %>
-    </ol>
+        <% }) %>
+
+      </ul>
+    </div>
   </section>
+
+
+
+
 </body>
 </html>
