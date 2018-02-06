@@ -158,7 +158,7 @@ For comment declaration uses inline comment syntax
 * `Two (2)` empty lines between loosely related rulesets.
 * `Four (4)` empty lines between entirely new sections.
     
-    
+**Example**
     
     //------------------------------------//
     //  #FOO
