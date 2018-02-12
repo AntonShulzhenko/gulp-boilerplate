@@ -198,6 +198,19 @@ All strings in classes are delimited with a hyphen (-), like so:
     
     .sub-content { }
     
+### Transliteration
+
+**Don not use transliteration for class naming!!!**
+
+### State change class naming
+
+By default to show active, disabled, etc. elements states use prefix `is-` for class naming
+
+**Example**
+
+    .is-active { }
+    .is-opened { }
+    
 #### BEM-like Naming
 
 BEM splits components’ classes into three groups:
