@@ -1,12 +1,12 @@
-var gulp     = require('gulp');
-var svgmin   = require('gulp-svgmin');
-var changed  = require('gulp-changed');
-var plumber  = require('gulp-plumber');
-var config   = require('../config');
+const gulp     = require('gulp');
+const svgmin   = require('gulp-svgmin');
+const changed  = require('gulp-changed');
+const plumber  = require('gulp-plumber');
+const config   = require('../config');
 
-gulp.task('svgo', function() {
+gulp.task('svgo', () => {
   return gulp
-    .src(config.src.img + '/svgo/**/*.svg')
+    .src(`${config.src.img}/svgo/**/*.svg`)
     .pipe(plumber({
       errorHandler: config.errorHandler
     }))
@@ -26,6 +26,6 @@ gulp.task('svgo', function() {
     .pipe(gulp.dest(config.dest.img));
 });
 
-gulp.task('svgo:watch', function() {
-  gulp.watch(config.src.img + '/svgo/**/*.svg', ['svgo']);
+gulp.task('svgo:watch', () => {
+  gulp.watch(`${config.src.img}/svgo/**/*.svg`, ['svgo']);
 });

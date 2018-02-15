@@ -1,0 +1,16 @@
+<svg width="10" height="5" viewBox="0 0 10 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>down-arrow</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-3056 375)">
+<g id="down-arrow">
+<g id="Group">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="matrix(-1 0 0 1 3066 -375)"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 9.89768 0.0966182C 9.75986 -0.0322062 9.53589 -0.0322062 9.39806 0.0966182L 5.00483 4.21095L 0.602992 0.0966182C 0.465165 -0.0322062 0.241197 -0.0322062 0.10337 0.0966182C -0.0344567 0.225443 -0.0344567 0.434783 0.10337 0.563607L 4.74641 4.90338C 4.81532 4.96779 4.90146 5 4.99622 5C 5.08236 5 5.17712 4.96779 5.24603 4.90338L 9.88907 0.563607C 10.0355 0.434783 10.0355 0.225443 9.89768 0.0966182Z"/>
+</defs>
+</svg>

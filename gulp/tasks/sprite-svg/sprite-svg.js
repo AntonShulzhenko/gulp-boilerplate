@@ -1,16 +1,16 @@
-var gulp        = require('gulp');
-var plumber     = require('gulp-plumber');
-var svgmin      = require('gulp-svgmin');
-var svgStore    = require('gulp-svgstore');
-var rename      = require('gulp-rename');
-var cheerio     = require('gulp-cheerio');
-var through2    = require('through2');
-var consolidate = require('gulp-consolidate');
-var config      = require('../../config');
+const gulp        = require('gulp');
+const plumber     = require('gulp-plumber');
+const svgmin      = require('gulp-svgmin');
+const svgStore    = require('gulp-svgstore');
+const rename      = require('gulp-rename');
+const cheerio     = require('gulp-cheerio');
+const through2    = require('through2');
+const consolidate = require('gulp-consolidate');
+const config      = require('../../config');
 
-gulp.task('sprite:svg', function() {
+gulp.task('sprite:svg', () => {
   return gulp
-    .src(config.src.iconsSvg + '/*.svg')
+    .src(`${config.src.iconsSvg}/*.svg`)
     .pipe(plumber({
       errorHandler: config.errorHandler
     }))
@@ -29,14 +29,15 @@ gulp.task('sprite:svg', function() {
     .pipe(rename({ prefix: 'icon-' }))
     .pipe(svgStore({ inlineSvg: false }))
     .pipe(through2.obj(function(file, encoding, cb) {
-      var $ = file.cheerio;
-      var data = $('svg > symbol').map(function() {
-        var $this  = $(this);
-        var size   = $this.attr('viewBox').split(' ').splice(2);
-        var name   = $this.attr('id');
-        var ratio  = size[0] / size[1]; // symbol width / symbol height
-        var fill   = $this.find('[fill]:not([fill="currentColor"])').attr('fill');
-        var stroke = $this.find('[stroke]').attr('stroke');
+      let $ = file.cheerio;
+      let data = $('svg > symbol').map(function() {
+        let $this  = $(this),
+          size   = $this.attr('viewBox').split(' ').splice(2),
+          name   = $this.attr('id'),
+          ratio  = size[0] / size[1], // symbol width / symbol height
+          fill   = $this.find('[fill]:not([fill="currentColor"])').attr('fill'),
+          stroke = $this.find('[stroke]').attr('stroke');
+
         return {
           name: name,
           ratio: +ratio.toFixed(2),
@@ -44,17 +45,21 @@ gulp.task('sprite:svg', function() {
           stroke: stroke || 'initial'
         };
       }).get();
+
       this.push(file);
+
       gulp.src(__dirname + '/_sprite-svg.scss')
         .pipe(consolidate('lodash', {
           symbols: data
         }))
         .pipe(gulp.dest(config.src.sassGen));
+
       gulp.src(__dirname + '/sprite.html')
         .pipe(consolidate('lodash', {
           symbols: data
         }))
         .pipe(gulp.dest(config.src.root));
+
       cb();
     }))
     .pipe(cheerio({
@@ -68,6 +73,6 @@ gulp.task('sprite:svg', function() {
     .pipe(gulp.dest(config.dest.img));
 });
 
-gulp.task('sprite:svg:watch', function() {
-  gulp.watch(config.src.iconsSvg + '/*.svg', ['sprite:svg']);
+gulp.task('sprite:svg:watch', () => {
+  gulp.watch(`${config.src.iconsSvg}/*.svg`, ['sprite:svg']);
 });
