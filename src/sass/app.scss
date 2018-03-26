@@ -1,97 +1,64 @@
-// CONTENTS
-//
-// BOOTSTRAP FILES
-// Functions............... Bootstrap functions
-// Variables............... Bootstrap variables
-// Mixins.................. Bootstrap mixins
-// Grid.................... Bootstrap grid
-// Spacing................. Bootstrap spacing classes
-// Display................. Bootstrap display classes
-//
-// SETTINGS
-// Colors.................. Colors and color schemes.
-// Grid.................... Grid system.
-// Links................... Links variables.
-// Spacing................. Map with spacers.
-// Transition.............. Transition variables.
-// Typography.............. Global fonts variables, heading font sizes, etc.
-//
-// TOOLS
-// Mixins.................. Mixins.
-// Helpers................. Functions + mixins.
-//
-// RESET
-// Reset................... Reset styles.
-//
-// GENERATED
-// Sprite-svg.............. Generated styles for svg sprite.
-//
-// BASE
-// Fonts................... Fonts.
-// Body.................... Body styles.
-// Headings................ H1–H6 styles.
-// Link.................... Link styles.
-//
-// OBJECTS
-// Layouts................. Wrapping and constraining elements.
-// Main.................... Main layout styles.
-//
-// COMPONENTS
-// Header.................. The main page header.
-// Footer.................. The main page footer.
-// Buttons................. Button elements.
-//
-// TRUMPS
-// Text.................... Text helpers.
+/**
+ * Helpers
+ */
+
+@import "helpers/helpers";
+@import "helpers/mixins";
+@import "helpers/spacing";
+@import "helpers/types";
 
 
-// Non-rendering files (mixins, functions, etc.)
-@import "init";
+/**
+ * Variables
+ */
+
+@import "variables/variables";
 
 
 
-// Reset
+/**
+ * Reset
+ */
 
 @import "reset/reset";
 
 
 
-// Generated
-
-@import "generated/sprite-svg";
-
-
-
-// Base
+/**
+ * Base
+ */
 
 @import "base/base";
 
 
 
-// Bootstrap Grid
+/**
+ * Generated
+ */
 
-@import "../../node_modules/bootstrap/scss/bootstrap-grid";
-
-
-
-// Bootstrap Spacing Classes
-
-@import "../../node_modules/bootstrap/scss/utilities/spacing";
+@import "generated/sprite-svg";
 
 
 
-// Trumps
+/**
+ * Layouts
+ */
 
-@import "trumps/trumps";
-
-
-
-// Objects
-
-@import "objects/objects";
+@import "layouts/layout";
 
 
 
-// Components
+/**
+ * Objects
+ */
 
-@import "components/components";
+@import "objects/object";
+
+
+
+/**
+ * Components
+ */
+
+@import "components/component";
+
