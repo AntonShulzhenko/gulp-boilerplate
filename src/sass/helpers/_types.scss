@@ -21,9 +21,9 @@
     $line-height: get-nth($params, 3);
     
     @if $breakpoint == $base-name {
-      @include make-if-exist($size, "font-size");
-      @include make-if-exist($weight, "font-weight");
-      @include make-if-exist($line-height, "line-height");
+      @include make-if-exist($size, 'font-size');
+      @include make-if-exist($weight, 'font-weight');
+      @include make-if-exist($line-height, 'line-height');
     } @else {
       @include media-breakpoint-up($breakpoint, $font-breakpoints-map) {
         @include make-if-exist($size, font-size);

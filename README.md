@@ -1,4 +1,4 @@
-# Project documentation
+# Documentation
 This documentation contains instruction how to start project and recommended styleguidelines.
 
 * [Start project](#start)
@@ -17,7 +17,7 @@ This documentation contains instruction how to start project and recommended sty
 Clone this repo and then in command line type:
 
 * `npm install` or `yarn` - install all dependencies
-* `gulp` - run dev-server and let magic happen, or
+* `gulp` - run dev-server
 * `gulp build` - build project from sources
 
 
